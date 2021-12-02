@@ -1,0 +1,21 @@
+---
+output: html_document
+title: Julia's Awsome Report
+---
+
+```{r include = FALSE}
+here::i_am("report.Rmd")
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+## Table 1
+
+Here is my great table
+
+```{r table1, echo = FALSE}
+data_for_table <- readRDS(here::here(
+	"output", "data_for_table.rds"
+))
+
+knitr::kable(data_for_table)
+```
